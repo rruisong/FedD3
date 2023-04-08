@@ -3,6 +3,8 @@
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2208.11311)
 [![supplement](https://img.shields.io/badge/Supplementary-Material-red)](https://arxiv.org/abs/2208.11311)
 
+![drawing](figures/FedD3_framework.PNG)
+
 ## Introduction
 
 FedD3 is a federated learning framework designed to train models using decentralized dataset distillation, requiring only a single communication round. This repository contains four main modules:
@@ -11,11 +13,6 @@ FedD3 is a federated learning framework designed to train models using decentral
 * **FedD3 implementation**: PyTorch implementation of FedD3 with coreset-based and KIP-based instances.
 * **Baseline implementations**: PyTorch implementations of federated learning baselines, including FedAvg, FedNova, FedProx, and SCAFFOLD.
 * **Postprocessing**: Visualizes training results for evaluation.
-
-## Framework Overview
-
-![drawing](figures/FedD3_framework.PNG)
-
 
 ## Installation
 
@@ -37,9 +34,9 @@ Run the following command to install the required packages:
 
 ## Federated Dataset Preprocessing
 
-This module divides the entire dataset into a specified number of clients based on federated settings. Non-IID datasets are created depending on the value of C_k (the number of classes in each local dataset) to introduce label distribution skew.
+This module divides the entire dataset into a specified number of clients based on federated settings. Non-IID datasets are created depending on the value of `C_k` (the number of classes in each local dataset) to introduce label distribution skew.
 
-By calling the divide_data() function, one of the datasets used in this paper (i.e., MNIST, CIFAR-10, Fashion-MNIST, and SVHN) is automatically downloaded via PyTorch. This module is integrated into the main functions of FedD3 and baselines.
+By calling the `divide_data()` function, one of the datasets used in this paper (i.e., MNIST, CIFAR-10, Fashion-MNIST, and SVHN) is automatically downloaded via PyTorch. This module is integrated into the main functions of FedD3 and baselines.
 
 ## Running FedD3
 
